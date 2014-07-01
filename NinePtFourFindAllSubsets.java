@@ -20,6 +20,16 @@ public class NinePtFourFindAllSubsets {
 
     //the solution
     public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set) {
+	int uppperCap = 1 << set.size(); //compute 2^n
+	ArrayList<ArrayList<Integer>> allSubsetsArr = new ArrayList<ArrayList<Integer>>();
+	for(int i=0;i<upperCap;i++){
+	    ArrayList<Integer> subset = convertIntToSet(i, set);
+	    allSubsetsArr.add(subset);
+	}
+	return allSubsetsArr;
+    }
+
+    public static ArrayList<Integer> convertIntToSet(int i, ArrayList<Integer> set){
 	
     }
 
