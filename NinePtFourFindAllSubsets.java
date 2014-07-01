@@ -1,10 +1,13 @@
-/* 9.4 return all subsets of a set; this is my combinaorics solution */
+/* 9.4 return all subsets of a set; this is my combinaorics solution
+   Note that in this solution, 1 << set.size() to compute 2^n only works
+   if n<=31, because we can not perform 31 bit shift on an 32 bit int */
+
 import java.util.ArrayList;
 
 public class NinePtFourFindAllSubsets {
     public static void main(String args[]){
 	ArrayList<Integer> set = new ArrayList<Integer>();
-	for (int i=1; i<11; i++) {
+	for (int i=1; i<4; i++) {
 	    Integer anInteger = new Integer(i);
 	    set.add(anInteger);
 	}
@@ -29,8 +32,15 @@ public class NinePtFourFindAllSubsets {
 	return allSubsetsArr;
     }
 
-    public static ArrayList<Integer> convertIntToSet(int i, ArrayList<Integer> set){
-	
+    public static ArrayList<Integer> convertIntToSet(int combination, ArrayList<Integer> set){
+	ArrayList<Integer> subsetArr = new ArrayList<Integer>();
+	int setIndex = 0; //associate the binary with the set
+	for (int i=combination; i>0; i>>=1){
+	    if ((i&1)==1)
+		subsetArr.add(set.get(setIndex));
+	    setIndex++;
+	}
+	return subsetArr;  //when combination is 0000, just return empty arraylist(empty set)
     }
 
     
