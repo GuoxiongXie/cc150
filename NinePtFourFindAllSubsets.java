@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public class NinePtFourFindAllSubsets {
     public static void main(String args[]){
 	ArrayList<Integer> set = new ArrayList<Integer>();
-	for (int i=1; i<4; i++) {
+	for (int i=1; i<5; i++) {
 	    Integer anInteger = new Integer(i);
 	    set.add(anInteger);
 	}
 	ArrayList<ArrayList<Integer>> allSubsetsArr = getSubsets(set);
 
-	for (int i=1; i<allSubsetsArr.size(); i++){
+	for (int i=0; i<allSubsetsArr.size(); i++){
 	    ArrayList<Integer> subsetArr = allSubsetsArr.get(i);
 	    for (int j=0;j<subsetArr.size();j++)
 		System.out.print(subsetArr.get(j).intValue()+" ");
@@ -23,7 +23,7 @@ public class NinePtFourFindAllSubsets {
 
     //the solution
     public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set) {
-	int uppperCap = 1 << set.size(); //compute 2^n
+	int upperCap = 1 << set.size(); //compute 2^n
 	ArrayList<ArrayList<Integer>> allSubsetsArr = new ArrayList<ArrayList<Integer>>();
 	for(int i=0;i<upperCap;i++){
 	    ArrayList<Integer> subset = convertIntToSet(i, set);
