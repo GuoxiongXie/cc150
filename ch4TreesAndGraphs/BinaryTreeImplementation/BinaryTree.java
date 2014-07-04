@@ -55,4 +55,49 @@ public class BinaryTree<T> {
     public void merge(T rootItem, BinaryTree<T> binaryTree1, BinaryTree<T> binaryTree2){
 	//TODO
     }
+
+
+
+    /* BinaryNode Class */
+    private class BinaryNode<T> {
+	private T element;
+	private BinaryNode left;
+	private BinaryNode right;
+
+	//constructors
+	public BinaryNode(){
+	    this(null, null, null);
+	}
+	public BinaryNode(T item, BinaryNode<T> leftNode, BinaryNode<T> rightNode){
+	    element = item;
+	    left = leftNode;
+	    right = rightNode;
+	}
+
+	public T getElement(){
+	    return element;
+	}
+	public void setElement(T item){
+	    element = item;
+	}
+
+	public BinaryNode<T> getLeft(){
+	    return left;
+	}
+	public BinaryNode<T> getRight(){
+	    return right;
+	}
+
+	public void setLeft(BinaryNode<T> leftNode){
+	    left = leftNode;
+	}
+	public void setRight(BinaryNode<T> rightNode){
+	    right = rightNode;
+	}
+
+	//size and height as static methods
+	public static <T> int size(BinaryNode<T> node){
+	    //TODO
+	}
+    }
 }
