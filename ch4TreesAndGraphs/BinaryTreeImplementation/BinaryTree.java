@@ -95,8 +95,28 @@ public class BinaryTree<T> {
 	    right = rightNode;
 	}
 
-	//size and height as static methods
+	//size and height as static generic methods
 	public static <T> int size(BinaryNode<T> node){
+	    //TODO
+	}
+	public static <T> int height(BinaryNode<T> node){
+	    //TODO
+	}
+
+	public BinaryNode<T> duplicate() {
+	    //TODO
+	}
+
+	//Traversal methods
+	public void printPreorder(){
+	    //TODO
+	}
+
+	public void printInorder(){
+	    //TODO
+	}
+
+	public void printPostOrder(){
 	    //TODO
 	}
     }
