@@ -97,10 +97,17 @@ public class BinaryTree<T> {
 
 	//size and height as static generic methods
 	public static <T> int size(BinaryNode<T> node){
-	    //TODO
+	    if (node == null)
+		return 0;
+	    return 1 + size(node.left) + size(node.right); //1 is for the current node
 	}
 	public static <T> int height(BinaryNode<T> node){
-	    //TODO
+	    //the path length from deepest leaf to the root
+	    //note that the height of a one-node tree is 0
+	    
+	    if (node == null)
+		return -1; //setting null case to -1 will make leaf height = 0
+	    return 1 + Math.max(height(node.left), height(node.right)); //1 is for the current edge
 	}
 
 	public BinaryNode<T> duplicate() {
