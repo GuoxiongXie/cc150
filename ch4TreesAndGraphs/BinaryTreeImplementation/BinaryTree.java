@@ -115,16 +115,40 @@ public class BinaryTree<T> {
 	}
 
 	//Traversal methods
-	public void printPreorder(){
-	    //TODO
+	public void printPreOrder(){
+	    if (this != null) {
+		System.out.print(this.getElement()+" ");
+		if (this.left != null)
+		    this.left.printPreOrder();
+		if (this.right != null)
+		    this.right.printPreOrder();
+	    }
 	}
 
-	public void printInorder(){
+	public void printInOrder(){
 	    //TODO
 	}
 
 	public void printPostOrder(){
 	    //TODO
 	}
+
+	//static version of traversal methods
+	public static <T> void printPreOrder(BinaryNode<T> node){
+	    if (node != null){
+		System.out.print(node.getElement()+" ");
+		printPreOrder(node.left);
+		printPreOrder(node.right);
+	    }
+	}
+
+	public static <T> void printInOrder(BinaryNode<T> node){
+	    if (node != null){
+		printInOrder(node.left);
+		System.out.print(node.getElement()+" ");
+		printInOrder(node.right);
+	    }
+	}
+
     }
 }
