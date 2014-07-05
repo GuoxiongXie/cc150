@@ -111,7 +111,11 @@ public class BinaryTree<T> {
 	}
 
 	public BinaryNode<T> duplicate() {
-	    //TODO
+	    /* Return a reference to a node that is the root of a duplicate of 
+	       the binary tree rooted at the current node(this) */
+	    if (this == null)
+		return null;
+	    BinaryNode<T> newNode = new BinaryNode<T>(this.getElement(), this.left.duplicate(), this.right.duplicate());
 	}
 
 	//Traversal methods
